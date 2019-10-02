@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +10,11 @@ namespace Sokoban_Avans
     {
         static void Main(string[] args)
         {
-           // wtf a nigga with socks on
-           // he do be needing some jailtime doe
+            // wtf a nigga with socks on
+            // he do be needing some jailtime 
+            Parser parser = new Parser();
+            parser.LoadMaze();
         }
 
-
-        static string Bulge()
-        {
-            var UwU = "nuzzle";
-
-            return UwU;
-        }
-
-        static protected string poopy()
-        {
-            return "stinky";
-        }
     }
 }

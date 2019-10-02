@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+// Decompiled with JetBrains decompiler
 // Type: Sokoban.Domain.Parser
 // Assembly: MODL3_Sokoban_Console, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: 093DAD0A-C5DE-47B2-9FD1-E13B237341D3

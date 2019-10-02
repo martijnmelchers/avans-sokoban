@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sokoban_Avans
 {
-    class InputView
+    class EmptyTile : Tile
     {
     }
 }
