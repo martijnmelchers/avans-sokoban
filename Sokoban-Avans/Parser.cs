@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System;
 namespace Sokoban_Avans
 {
     class Parser
@@ -34,6 +35,8 @@ namespace Sokoban_Avans
                         {
                             this._maze.Origin = curRow[0];
                         }
+
+                        prevRow = curRow;
                     }
                 }
             }
@@ -70,14 +73,14 @@ namespace Sokoban_Avans
         }
 
         // Set the top/ down urls on the lists.
-        private void linkRows(List<Tile> a, List<Tile> b)
+        private void linkRows(List<Tile> prev, List<Tile> cur)
         {
-            for (var i = 0; i < 0; i++)
+            for (var i = 0; i < cur.Count; ++i)
             {
-                if (a[i] != null && b[i] != null)
+                if (prev[i] != null && cur[i] != null)
                 {
-                    b[i].TileUp = a[i];
-                    a[i].TileDown = b[i];
+                    cur[i].TileUp = prev[i];
+                    prev[i].TileDown = cur[i];
                 }
             }
         }

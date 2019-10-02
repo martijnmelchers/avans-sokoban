@@ -8,5 +8,9 @@ namespace Sokoban_Avans
 {
     class EmptyTile : Tile
     {
+        public override char toChar()
+        {
+            return ' ';
+        }
     }
 }

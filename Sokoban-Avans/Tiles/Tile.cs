@@ -12,7 +12,7 @@ namespace Sokoban_Avans
         public Tile TileLeft { get; set; }
         public Tile TileUp { get; set; }
         public Tile TileDown { get; set; }
-
+        public abstract char toChar();
         public static Tile getTile(char c)
         {
             Tile tile = new EmptyTile();
@@ -36,6 +36,7 @@ namespace Sokoban_Avans
                     break;
                 case '~':
                     // Pitfall.
+                    tile = new TargetTile();
                     break;
                 default:
                     // Throw exception or something.
