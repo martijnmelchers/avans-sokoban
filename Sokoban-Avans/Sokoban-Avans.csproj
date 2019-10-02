@@ -43,11 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
+    <Compile Include="InputView.cs" />
+    <Compile Include="Maze.cs" />
+    <Compile Include="OutputView.cs" />
+    <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doolhof\doolhof1.txt" />
+    <Content Include="Doolhof\doolhof2.txt" />
+    <Content Include="Doolhof\doolhof3.txt" />
+    <Content Include="Doolhof\doolhof4.txt" />
+    <Content Include="NewFile1.txt" />
+    <Content Include="NewFile2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
