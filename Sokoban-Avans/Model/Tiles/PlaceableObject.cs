@@ -1,11 +1,6 @@
-using Sokoban_Avans.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sokoban.Model;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     abstract class PlacableItem
     {
@@ -13,6 +8,6 @@ namespace Sokoban_Avans
 
 
         public abstract bool Move(MazeAction action);
-        public abstract char toChar();
+        public abstract char ToChar();
     }
 }

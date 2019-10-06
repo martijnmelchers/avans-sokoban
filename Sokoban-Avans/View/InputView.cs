@@ -1,7 +1,7 @@
-using Sokoban_Avans.Model;
+using Sokoban.Model;
 using System;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     class InputView
     {

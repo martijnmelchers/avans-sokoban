@@ -1,9 +1,8 @@
-using Sokoban_Avans.Exceptions;
-using Sokoban_Avans.Model;
-using System;
+using Sokoban.Exceptions;
+using Sokoban.Model;
 using System.IO;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     class Controller
     {
@@ -99,7 +98,7 @@ namespace Sokoban_Avans
                         result = MoveResult.Reset;
                         break;
                     default:
-                         _maze.truck.Move(action);
+                         _maze.Truck.Move(action);
                         // _maze.MoveEmployee();
                         if(_maze.IsSolved)
                         {

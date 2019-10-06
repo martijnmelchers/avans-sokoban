@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     class Parser
     {
@@ -12,7 +12,7 @@ namespace Sokoban_Avans
         {
 
             _maze = new Maze();
-            this.detectDimensions(mazeNumber);
+            this.DetectDimensions(mazeNumber);
             using (var fileStream = File.OpenRead($"..\\..\\Doolhof\\doolhof{mazeNumber}.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream))
@@ -68,20 +68,20 @@ namespace Sokoban_Avans
                 if (character == '@')
                 {
                     Truck truck = new Truck(curTile);
-                    this._maze.truck = truck;
-                    curTile.PlaceItem((PlacableItem)truck);
+                    _maze.Truck = truck;
+                    curTile.PlaceItem(truck);
                 }
                 if (character == 'o')
                 {
                     Crate k = new Crate(curTile);
-                    this._maze.AddCrate(k);
-                    curTile.PlaceItem((PlacableItem)k);
+                    _maze.AddCrate(k);
+                    curTile.PlaceItem(k);
                 }
                 if (character == '$' || character == 'Z')
                 {
                     Worker worker = new Worker(curTile, character == 'Z');
-                    this._maze.worker = worker;
-                    curTile.PlaceItem((PlacableItem) worker);
+                    _maze.Worker = worker;
+                    curTile.PlaceItem(worker);
                 }
 
 
@@ -104,14 +104,14 @@ namespace Sokoban_Avans
         }
 
 
-        private void detectDimensions(int mazeNumber)
+        private void DetectDimensions(int mazeNumber)
         {
             using (var fileStream = File.OpenRead($"..\\..\\Doolhof\\doolhof{mazeNumber}.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream))
                 {
-                    int num1 = 0;
-                    int num2 = 0;
+                    int width = 0;
+                    int height = 0;
                     try
                     {
                         string str = streamReader.ReadLine();
@@ -119,9 +119,10 @@ namespace Sokoban_Avans
                         {
                             if (str != null)
                             {
-                                if (str.Length > num1)
-                                    num1 = str.Length;
-                                ++num2;
+                                if (str.Length > width)
+                                    width = str.Length;
+
+                                height++;
                                 str = streamReader.ReadLine();
                             }
                             else
@@ -131,8 +132,8 @@ namespace Sokoban_Avans
                             }
                         }
                        
-                        this._maze.width = num1;
-                        this._maze.height = num2;
+                        _maze.Width = width;
+                        _maze.Height = height;
                     }
                     catch (Exception ex)
                     {

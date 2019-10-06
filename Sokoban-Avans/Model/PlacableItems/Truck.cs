@@ -1,11 +1,6 @@
-using Sokoban_Avans.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sokoban.Model;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     class Truck : PlacableItem
     {
@@ -14,21 +9,27 @@ namespace Sokoban_Avans
             this._tile = tile;
         }
 
-        public override char toChar() {
+        public override char ToChar()
+        {
             return '@';
         }
 
         public override bool Move(MazeAction action)
         {
-            Tile currentTile = this._tile.GetNeigbour(action);
+            Tile currentTile = _tile.GetNeigbour(action);
+
             if (!currentTile.isEmpty())
                 currentTile.Content.Move(action);
+
             if (!currentTile.isEmpty())
                 return false;
+
             FloorTile floorTile = (FloorTile)currentTile;
-            floorTile.PlaceItem((PlacableItem)this);
-            this._tile.Remove();
-            this._tile = (Tile)floorTile;
+            floorTile.PlaceItem(this);
+
+            _tile.Remove();
+            _tile = floorTile;
+
             return true;
         }
     }

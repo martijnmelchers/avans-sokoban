@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sokoban_Avans.Model;
+using Sokoban.Model;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     class Worker : PlacableItem
     {
@@ -29,7 +24,7 @@ namespace Sokoban_Avans
 
         }
 
-        public override char toChar()
+        public override char ToChar()
         {
             return this._asleep ? 'Z' : '$';
         }

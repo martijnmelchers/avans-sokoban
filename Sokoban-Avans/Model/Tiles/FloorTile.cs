@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sokoban_Avans
+namespace Sokoban
 {
     class FloorTile : Tile
     {
@@ -24,7 +18,7 @@ namespace Sokoban_Avans
         public override char ToChar()
         {
             if (!this.isEmpty())
-                return this.Content.toChar();
+                return this.Content.ToChar();
             return '.';
         }
     }

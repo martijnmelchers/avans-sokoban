@@ -1,12 +1,7 @@
-using Sokoban_Avans.Exceptions;
-using Sokoban_Avans.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sokoban.Exceptions;
+using Sokoban.Model;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     abstract class Tile
     {

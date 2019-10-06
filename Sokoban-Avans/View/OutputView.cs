@@ -1,10 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Sokoban_Avans
+namespace Sokoban
 {
     class OutputView
     {
@@ -30,9 +26,13 @@ namespace Sokoban_Avans
 
         public void RenderMaze(Maze maze)
         {
-            // SASCHA IMPLEMENTEREN
-            int height = maze.height;
-            int width = maze.width;
+            Console.Clear();
+            Console.WriteLine("┌──────────┐   ");
+            Console.WriteLine("| Sokoban  |   ");
+            Console.WriteLine("└──────────┘   ");
+            Console.WriteLine("─────────────────────────────────────────────────────────────────────────");
+            int height = maze.Height;
+            int width = maze.Width;
             Tile originTile = maze.Origin;
             Tile fieldBelow = originTile.TileDown;
             for (int index1 = 0; index1 < height; ++index1)
@@ -47,6 +47,7 @@ namespace Sokoban_Avans
                     fieldBelow = originTile.TileDown;
                 Console.WriteLine();
             }
+            Console.WriteLine("─────────────────────────────────────────────────────────────────────────");
         }
 
         internal void ShowMazeFinished()
