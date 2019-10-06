@@ -52,7 +52,10 @@ namespace Sokoban
 
         internal void ShowMazeFinished()
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
+            Console.WriteLine("JE BENT EEN KANJER, Je hebt gewonnen");
+            Console.WriteLine("Druk op een toets om te stoppen.");
+            Console.ReadKey();
         }
     }
 }

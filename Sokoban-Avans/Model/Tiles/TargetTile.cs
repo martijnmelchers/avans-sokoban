@@ -2,23 +2,15 @@ using System;
 
 namespace Sokoban
 {
-    class TargetTile : Tile
+    class TargetTile : FloorTile
     {
         public override PlacableItem Content { get; set; }
 
-        public override bool PlaceItem(PlacableItem item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Remove()
-        {
-            throw new NotImplementedException();
-        }
-
         public override char ToChar()
         {
-            return 'x';
+            if (!this.IsEmpty() && !(this.Content is Crate))
+                return this.Content.ToChar();
+            return this.Content is Crate ? '0' : 'x';
         }
     }
 }

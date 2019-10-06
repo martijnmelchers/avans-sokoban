@@ -99,7 +99,7 @@ namespace Sokoban
                         break;
                     default:
                          _maze.Truck.Move(action);
-                        // _maze.MoveEmployee();
+                         _maze.MoveWorker();
                         if(_maze.IsSolved)
                         {
                             inMaze = false;

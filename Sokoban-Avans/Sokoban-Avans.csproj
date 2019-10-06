@@ -52,6 +52,7 @@
     <Compile Include="Model\PlacableItems\Truck.cs" />
     <Compile Include="Model\PlacableItems\Wall.cs" />
     <Compile Include="Model\PlacableItems\Worker.cs" />
+    <Compile Include="Model\Tiles\Pit.cs" />
     <Compile Include="Model\Tiles\PlaceableObject.cs" />
     <Compile Include="Model\Tiles\TargetTile.cs" />
     <Compile Include="Model\Tiles\FloorTile.cs" />

@@ -10,14 +10,15 @@ namespace Sokoban
         public int Height { get; set; }
         public int Width { get; set; }
 
-        public Truck Truck { get; set;  }
-        public bool IsSolved {
+        public Truck Truck { get; set; }
+        public bool IsSolved
+        {
             get
             {
                 int totalCrates = _crates.Count;
                 int completedCrates = 0;
 
-                // Loop through all crates and see if they are on a spot
+                // Loop through all crates and see if they are on a target.
                 foreach (Crate crate in _crates)
                     if (crate.IsOnTarget())
                         completedCrates++;
@@ -35,5 +36,11 @@ namespace Sokoban
         public Maze() { }
 
 
+        public void MoveWorker()
+        {
+            if (this.Worker == null)
+                return;
+            this.Worker.Work();
+        }
     }
 }

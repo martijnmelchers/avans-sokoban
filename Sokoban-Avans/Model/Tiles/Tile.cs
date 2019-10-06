@@ -38,7 +38,7 @@ namespace Sokoban
                     break;
                 case '~':
                     // Pitfall.
-                    tile = new TargetTile();
+                    tile = new PitTile();
                     break;
                 default:
                     throw new MazeParseException(c);

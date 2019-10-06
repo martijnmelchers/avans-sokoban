@@ -24,6 +24,9 @@ namespace Sokoban
             if (!currentTile.IsEmpty())
                 return false;
 
+
+
+     
             FloorTile floorTile = (FloorTile)currentTile;
             floorTile.PlaceItem(this);
 
