@@ -1,19 +1,18 @@
-
 using System.Collections.Generic;
 using System.IO;
-using System;
+
 namespace Sokoban_Avans
 {
     class Parser
     {
 
         private Maze _maze;
-        public Maze LoadMaze()
+        public Maze LoadMaze(int mazeNumber)
         {
 
-            this._maze = new Maze();
+            _maze = new Maze();
 
-            using (var fileStream = File.OpenRead("C:/Doolhof/doolhof1.txt"))
+            using (var fileStream = File.OpenRead($"..\\..\\Doolhof\\doolhof{mazeNumber}.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream))
                 {
@@ -21,39 +20,35 @@ namespace Sokoban_Avans
                     List<Tile> prevRow = null; 
                     string line;
                     while ((line = streamReader.ReadLine()) != null){
-                        List<Tile> curRow = this.procesRow(line);
+                        List<Tile> curRow = ProcessRow(line);
 
 
                         // Link rows when we have a previous row.
                         if (prevRow != null)
-                        {
-                            linkRows(prevRow, curRow);
-                        }
-
+                            LinkRows(prevRow, curRow);
                         // This is the first line, set the original Tile of the maze.
                         else
-                        {
-                            this._maze.Origin = curRow[0];
-                        }
+                            _maze.Origin = curRow[0];
+                        
 
                         prevRow = curRow;
                     }
                 }
             }
 
-            return this._maze;
+            return _maze;
         }
 
         // Handle each line of the maze file.
-        private List<Tile> procesRow(string line)
+        private List<Tile> ProcessRow(string line)
         {
             List<Tile> tileList = new List<Tile>();
-            Tile prevTile = (Tile) null;
+            Tile prevTile = null;
             for(var i = 0; i < line.Length; i++)
             {
                 char character = line[i];
 
-                Tile curTile = Tile.getTile(character);
+                Tile curTile = Tile.GetTile(character);
 
                 // If there is a previous tile.
                 if(prevTile != null)
@@ -73,7 +68,7 @@ namespace Sokoban_Avans
         }
 
         // Set the top/ down urls on the lists.
-        private void linkRows(List<Tile> prev, List<Tile> cur)
+        private void LinkRows(List<Tile> prev, List<Tile> cur)
         {
             for (var i = 0; i < cur.Count; ++i)
             {

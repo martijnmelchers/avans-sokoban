@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sokoban_Avans
+namespace Sokoban_Avans.Model
 {
-    class OutputView
+    enum GameState
     {
+        Menu,
+        InGame
     }
 }

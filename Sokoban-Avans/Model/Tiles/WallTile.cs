@@ -8,7 +8,7 @@ namespace Sokoban_Avans
 {
     class WallTile : Tile
     {
-        public override char toChar()
+        public override char ToChar()
         {
             return '|';
         }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sokoban_Avans
 {
-    class TargetTile : Tile
+    class EmptyTile : Tile
     {
-        public override char toChar()
+        public override char ToChar()
         {
-            return 'x';
+            return ' ';
         }
     }
 }

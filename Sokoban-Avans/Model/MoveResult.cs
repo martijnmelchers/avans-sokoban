@@ -1,12 +1,15 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sokoban_Avans
+namespace Sokoban_Avans.Model
 {
-    class InputView
+    enum MoveResult
     {
+        Quit,
+        Solved,
+        Reset
     }
 }

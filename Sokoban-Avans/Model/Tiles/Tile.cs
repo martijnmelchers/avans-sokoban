@@ -1,3 +1,4 @@
+using Sokoban_Avans.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace Sokoban_Avans
         public Tile TileLeft { get; set; }
         public Tile TileUp { get; set; }
         public Tile TileDown { get; set; }
-        public abstract char toChar();
-        public static Tile getTile(char c)
+        public abstract char ToChar();
+        public static Tile GetTile(char c)
         {
             Tile tile = new EmptyTile();
             switch (c)
@@ -39,14 +40,13 @@ namespace Sokoban_Avans
                     tile = new TargetTile();
                     break;
                 default:
-                    // Throw exception or something.
-                    break;
+                    throw new MazeParseException(c);
             }
 
             return tile;
         }
 
-        public Tile getNeigbour()
+        public Tile GetNeigbour()
         {
             return this.TileUp;
         }
