@@ -13,7 +13,7 @@ namespace Sokoban
         public abstract void Remove();
 
 
-        public PlacableItem Content { get; set; }
+        public abstract PlacableItem Content { get; set; }
         public abstract char ToChar();
         public static Tile GetTile(char c)
         {
@@ -52,22 +52,22 @@ namespace Sokoban
             switch (action)
             {
                 case MazeAction.Right:
-                    return this.TileRight;
+                    return TileRight;
                 case MazeAction.Left:
-                    return this.TileLeft;
+                    return TileLeft;
                 case MazeAction.Down:
-                    return this.TileDown;
+                    return TileDown;
                 case MazeAction.Up:
-                    return this.TileUp;
+                    return TileUp;
                 default:
-                    return (Tile)null;
+                    return null;
             }
         }
 
 
-        public bool isEmpty()
+        public virtual bool IsEmpty()
         {
-            return this.Content == null;    
+            return Content == null;    
         }
 
         public abstract bool PlaceItem(PlacableItem item);

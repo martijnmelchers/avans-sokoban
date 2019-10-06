@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{10B40742-CC2E-4F10-99CF-00E9E754CA4B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sokoban_Avans</RootNamespace>
+    <RootNamespace>Sokoban</RootNamespace>
     <AssemblyName>Sokoban-Avans</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -50,6 +50,7 @@
     <Compile Include="Model\MoveResult.cs" />
     <Compile Include="Model\PlacableItems\Crate.cs" />
     <Compile Include="Model\PlacableItems\Truck.cs" />
+    <Compile Include="Model\PlacableItems\Wall.cs" />
     <Compile Include="Model\PlacableItems\Worker.cs" />
     <Compile Include="Model\Tiles\PlaceableObject.cs" />
     <Compile Include="Model\Tiles\TargetTile.cs" />

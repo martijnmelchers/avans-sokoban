@@ -4,6 +4,7 @@ namespace Sokoban
 {
     class EmptyTile : Tile
     {
+        public override PlacableItem Content { get; set; }
         public override bool PlaceItem(PlacableItem item)
         {
             throw new NotImplementedException();

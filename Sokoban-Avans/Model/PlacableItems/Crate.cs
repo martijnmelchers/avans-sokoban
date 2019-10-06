@@ -17,7 +17,7 @@ namespace Sokoban
         public override bool Move(MazeAction direction)
         {
             Tile currentTile = this._tile.GetNeigbour(direction);
-            if (!currentTile.isEmpty())
+            if (!currentTile.IsEmpty())
                 return false;
             currentTile.PlaceItem((PlacableItem)this);
             this._tile.Remove();

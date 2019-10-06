@@ -18,10 +18,10 @@ namespace Sokoban
         {
             Tile currentTile = _tile.GetNeigbour(action);
 
-            if (!currentTile.isEmpty())
+            if (!currentTile.IsEmpty())
                 currentTile.Content.Move(action);
 
-            if (!currentTile.isEmpty())
+            if (!currentTile.IsEmpty())
                 return false;
 
             FloorTile floorTile = (FloorTile)currentTile;
