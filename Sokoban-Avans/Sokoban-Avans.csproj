@@ -48,6 +48,10 @@
     <Compile Include="Model\GameState.cs" />
     <Compile Include="Model\MazeAction.cs" />
     <Compile Include="Model\MoveResult.cs" />
+    <Compile Include="Model\PlacableItems\Crate.cs" />
+    <Compile Include="Model\PlacableItems\Truck.cs" />
+    <Compile Include="Model\PlacableItems\Worker.cs" />
+    <Compile Include="Model\Tiles\PlaceableObject.cs" />
     <Compile Include="Model\Tiles\TargetTile.cs" />
     <Compile Include="Model\Tiles\FloorTile.cs" />
     <Compile Include="Model\Tiles\WallTile.cs" />

@@ -1,4 +1,5 @@
 using Sokoban_Avans.Exceptions;
+using Sokoban_Avans.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,17 @@ using System.Threading.Tasks;
 
 namespace Sokoban_Avans
 {
-    public abstract class Tile
+    abstract class Tile
     {
         public Tile TileRight { get; set; }
         public Tile TileLeft { get; set; }
         public Tile TileUp { get; set; }
         public Tile TileDown { get; set; }
+
+        public abstract void Remove();
+
+
+        public PlacableItem Content { get; set; }
         public abstract char ToChar();
         public static Tile GetTile(char c)
         {
@@ -46,9 +52,29 @@ namespace Sokoban_Avans
             return tile;
         }
 
-        public Tile GetNeigbour()
+        public Tile GetNeigbour(MazeAction action)
         {
-            return this.TileUp;
+            switch (action)
+            {
+                case MazeAction.Right:
+                    return this.TileRight;
+                case MazeAction.Left:
+                    return this.TileLeft;
+                case MazeAction.Down:
+                    return this.TileDown;
+                case MazeAction.Up:
+                    return this.TileUp;
+                default:
+                    return (Tile)null;
+            }
         }
+
+
+        public bool isEmpty()
+        {
+            return this.Content == null;    
+        }
+
+        public abstract bool PlaceItem(PlacableItem item);
     }
 }

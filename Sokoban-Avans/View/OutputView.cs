@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +31,22 @@ namespace Sokoban_Avans
         public void RenderMaze(Maze maze)
         {
             // SASCHA IMPLEMENTEREN
-            throw new NotImplementedException();
+            int height = maze.height;
+            int width = maze.width;
+            Tile originTile = maze.Origin;
+            Tile fieldBelow = originTile.TileDown;
+            for (int index1 = 0; index1 < height; ++index1)
+            {
+                for (int index2 = 0; index2 < width; ++index2)
+                {
+                    Console.Write(originTile.ToChar());
+                    originTile = originTile.TileRight;
+                }
+                originTile = fieldBelow;
+                if (fieldBelow != null)
+                    fieldBelow = originTile.TileDown;
+                Console.WriteLine();
+            }
         }
 
         internal void ShowMazeFinished()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -11,7 +12,7 @@ namespace Sokoban_Avans
         {
 
             _maze = new Maze();
-
+            this.detectDimensions(mazeNumber);
             using (var fileStream = File.OpenRead($"..\\..\\Doolhof\\doolhof{mazeNumber}.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream))
@@ -62,6 +63,28 @@ namespace Sokoban_Avans
                 tileList.Add(curTile);
 
                 // Handle place-able items. (workers etc.)
+
+
+                if (character == '@')
+                {
+                    Truck truck = new Truck(curTile);
+                    this._maze.truck = truck;
+                    curTile.PlaceItem((PlacableItem)truck);
+                }
+                if (character == 'o')
+                {
+                    Crate k = new Crate(curTile);
+                    this._maze.AddCrate(k);
+                    curTile.PlaceItem((PlacableItem)k);
+                }
+                if (character == '$' || character == 'Z')
+                {
+                    Worker worker = new Worker(curTile, character == 'Z');
+                    this._maze.worker = worker;
+                    curTile.PlaceItem((PlacableItem) worker);
+                }
+
+
             }
 
             return tileList;
@@ -78,6 +101,46 @@ namespace Sokoban_Avans
                     prev[i].TileDown = cur[i];
                 }
             }
+        }
+
+
+        private void detectDimensions(int mazeNumber)
+        {
+            using (var fileStream = File.OpenRead($"..\\..\\Doolhof\\doolhof{mazeNumber}.txt"))
+            {
+                using (var streamReader = new StreamReader(fileStream))
+                {
+                    int num1 = 0;
+                    int num2 = 0;
+                    try
+                    {
+                        string str = streamReader.ReadLine();
+                        while (str != null)
+                        {
+                            if (str != null)
+                            {
+                                if (str.Length > num1)
+                                    num1 = str.Length;
+                                ++num2;
+                                str = streamReader.ReadLine();
+                            }
+                            else
+                            {
+                                streamReader.Close();
+                                streamReader.Close();
+                            }
+                        }
+                       
+                        this._maze.width = num1;
+                        this._maze.height = num2;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
+                }
+            }
+ 
         }
     }
 }
