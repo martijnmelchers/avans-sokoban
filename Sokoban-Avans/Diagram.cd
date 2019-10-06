@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sokoban.Controller">
+    <Position X="5.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAAAAAAhAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Controller\Controller.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_inputView" />
+      <Field Name="_maze" />
+      <Field Name="_outputView" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Maze">
+    <Position X="8.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAABEAAAAAAAAAACEAAAAACAABAAAAAABgAAAA=</HashCode>
+      <FileName>Model\Maze.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_crates" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Sokoban.Parser">
+    <Position X="11.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAAAAAAAAAAAgAIAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Parser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_maze" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Crate">
+    <Position X="5.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Model\PlacableItems\Crate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Truck">
+    <Position X="8" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PlacableItems\Truck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Worker">
+    <Position X="1.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAIAAAAEAAAAAAAAAIAAAAAAAAAAAAAQAAAE=</HashCode>
+      <FileName>Model\PlacableItems\Worker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.EmptyTile">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAgAAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tiles\EmptyTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.FloorTile">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAgAAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tiles\FloorTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.PitTile">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tiles\Pit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.PlacableItem">
+    <Position X="4.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIBAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tiles\PlaceableObject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_tile" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.TargetTile">
+    <Position X="3.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tiles\TargetTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Tile">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAAACAAoIAAAEAAAAABAAAAIAAhAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tiles\Tile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TileDown" />
+      <Property Name="Content" />
+      <Property Name="TileLeft" />
+      <Property Name="TileRight" />
+      <Property Name="TileUp" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.WallTile">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAACAAgAAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Tiles\WallTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Program" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.InputView">
+    <Position X="2.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>View\InputView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.OutputView">
+    <Position X="5.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAkAAAAAAAAABAAAA=</HashCode>
+      <FileName>View\OutputView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Exceptions.MazeParseException" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MazeParseException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Model.PlacableItems.Wall">
+    <Position X="3.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PlacableItems\Wall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Sokoban.Model.GameState" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAICAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GameState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sokoban.Model.MazeAction" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAABAAAAAAAAAAAAAAAAAAACACAAAAAAQI=</HashCode>
+      <FileName>Model\MazeAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sokoban.Model.MoveResult" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAIAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Model\MoveResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sokoban.Model.SelectAction" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIEAAAAAAEAgAAAAQCAAAQA=</HashCode>
+      <FileName>Model\SelectAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

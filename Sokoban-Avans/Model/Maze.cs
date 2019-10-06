@@ -38,9 +38,9 @@ namespace Sokoban
 
         public void MoveWorker()
         {
-            if (this.Worker == null)
+            if (Worker == null)
                 return;
-            this.Worker.Work();
+            Worker.Work();
         }
     }
 }

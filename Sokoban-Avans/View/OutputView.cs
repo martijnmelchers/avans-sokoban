@@ -50,12 +50,17 @@ namespace Sokoban
             Console.WriteLine("─────────────────────────────────────────────────────────────────────────");
         }
 
-        internal void ShowMazeFinished()
+        public void ShowMazeFinished()
         {
             Console.WriteLine();
             Console.WriteLine("JE BENT EEN KANJER, Je hebt gewonnen");
             Console.WriteLine("Druk op een toets om te stoppen.");
             Console.ReadKey();
+        }
+
+        public void PrintError(string content)
+        {
+            Console.WriteLine(content);
         }
     }
 }

@@ -62,17 +62,17 @@ namespace Sokoban
                     // If the file is not found in the filesystem
                     catch (FileNotFoundException e)
                     {
-
+                        _outputView.PrintError("Doolhof niet gevonden! Check je systeem of het bestand bestaat");
                     }
                     // If the directory is not found in the filesystem
                     catch (DirectoryNotFoundException e)
                     {
-
+                        _outputView.PrintError("Doolhof niet gevonden! Check je systeem of het bestand bestaat");
                     }
                     // If an error occured while parsing the maze
                     catch(MazeParseException e)
                     {
-
+                        _outputView.PrintError(e.ToString());
                     }
                 }
             }

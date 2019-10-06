@@ -16,18 +16,18 @@ namespace Sokoban
 
         public override bool Move(MazeAction direction)
         {
-            Tile currentTile = this._tile.GetNeigbour(direction);
+            Tile currentTile = _tile.GetNeigbour(direction);
             if (!currentTile.IsEmpty())
                 return false;
-            currentTile.PlaceItem((PlacableItem)this);
-            this._tile.Remove();
-            this._tile = currentTile;
+            currentTile.PlaceItem(this);
+            _tile.Remove();
+            _tile = currentTile;
             return true;
         }
 
         public bool IsOnTarget()
         {
-            return this._tile is TargetTile;
+            return _tile is TargetTile;
         }
     }
 }

@@ -5,24 +5,24 @@ namespace Sokoban
 {
     class Worker : PlacableItem
     {
-        private Random _random = new Random();
+        private readonly Random _random = new Random();
         private bool _asleep;
         public Worker(Tile tile, bool sleeping)
         {
-            this._tile = tile;
-            this._asleep = sleeping;
+            _tile = tile;
+            _asleep = sleeping;
         }
 
         public override bool Move(MazeAction action)
         {
-            if (this._asleep)
-                this._asleep = false;
+            if (_asleep)
+                _asleep = false;
             return false;
         }
 
-        public void walkAround(MazeAction action)
+        public void WalkAround(MazeAction action)
         {
-            Tile currentTile = this._tile.GetNeigbour(action);
+            Tile currentTile = _tile.GetNeigbour(action);
             if (!currentTile.IsEmpty())
                 currentTile.Content.Move(action);
             if (!currentTile.IsEmpty())
@@ -32,46 +32,46 @@ namespace Sokoban
             if (currentTile is FloorTile)
             {
                 FloorTile floorTile = (FloorTile)currentTile;
-                floorTile.PlaceItem((PlacableItem)this);
-                this._tile.Remove();
-                this._tile = (Tile)floorTile;
+                floorTile.PlaceItem(this);
+                _tile.Remove();
+                _tile = floorTile;
             }
 
         }
 
         public override char ToChar()
         {
-            return this._asleep ? 'Z' : '$';
+            return _asleep ? 'Z' : '$';
         }
 
 
         public void Work()
         {
-            if (this._asleep)
+            if (_asleep)
             {
-                if (this._random.Next(10) != 0)
+                if (_random.Next(10) != 0)
                     return;
-                this._asleep = false;
+                _asleep = false;
             }
-            else if (this._random.Next(4) == 0)
+            else if (_random.Next(4) == 0)
             {
-                this._asleep = true;
+                _asleep = true;
             }
             else
             {
-                switch (this._random.Next(4))
+                switch (_random.Next(4))
                 {
                     case 0:
-                        this.walkAround(MazeAction.Left);
+                        WalkAround(MazeAction.Left);
                         break;
                     case 1:
-                        this.walkAround(MazeAction.Up);
+                        WalkAround(MazeAction.Up);
                         break;
                     case 2:
-                        this.walkAround(MazeAction.Right);
+                        WalkAround(MazeAction.Right);
                         break;
                     case 3:
-                        this.walkAround(MazeAction.Down);
+                        WalkAround(MazeAction.Down);
                         break;
                 }
             }
