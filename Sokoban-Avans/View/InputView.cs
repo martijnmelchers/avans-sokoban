@@ -26,7 +26,7 @@ namespace Sokoban
             }
 
             if (consoleInput == 's')
-                input = 6;
+                input = 7;
 
             return (SelectAction) input;
         }

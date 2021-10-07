@@ -63,16 +63,19 @@ namespace Sokoban
                     catch (FileNotFoundException e)
                     {
                         _outputView.PrintError("Doolhof niet gevonden! Check je systeem of het bestand bestaat");
+                        gameState = GameState.Menu;
                     }
                     // If the directory is not found in the filesystem
                     catch (DirectoryNotFoundException e)
                     {
                         _outputView.PrintError("Doolhof niet gevonden! Check je systeem of het bestand bestaat");
+                        gameState = GameState.Menu;
                     }
                     // If an error occured while parsing the maze
-                    catch(MazeParseException e)
+                    catch (MazeParseException e)
                     {
                         _outputView.PrintError(e.ToString());
+                        gameState = GameState.Menu;
                     }
                 }
             }

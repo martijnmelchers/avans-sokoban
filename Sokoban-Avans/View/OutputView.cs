@@ -61,6 +61,7 @@ namespace Sokoban
         public void PrintError(string content)
         {
             Console.WriteLine(content);
+            Console.ReadKey();
         }
     }
 }

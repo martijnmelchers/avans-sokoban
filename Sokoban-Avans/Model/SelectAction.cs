@@ -2,6 +2,7 @@
 {
     enum SelectAction
     {
+        None,
         Maze1,
         Maze2,
         Maze3,

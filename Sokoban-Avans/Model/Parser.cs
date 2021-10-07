@@ -13,7 +13,7 @@ namespace Sokoban
 
             _maze = new Maze();
             this.DetectDimensions(mazeNumber);
-            using (var fileStream = File.OpenRead($"..\\..\\Doolhof\\doolhof{mazeNumber}.txt"))
+            using (var fileStream = File.OpenRead($"Doolhof\\doolhof{mazeNumber}.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream))
                 {
@@ -106,7 +106,7 @@ namespace Sokoban
 
         private void DetectDimensions(int mazeNumber)
         {
-            using (var fileStream = File.OpenRead($"..\\..\\Doolhof\\doolhof{mazeNumber}.txt"))
+            using (var fileStream = File.OpenRead($"Doolhof\\doolhof{mazeNumber}.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream))
                 {

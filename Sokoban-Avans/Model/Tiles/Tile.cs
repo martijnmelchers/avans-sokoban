@@ -11,8 +11,6 @@ namespace Sokoban
         public Tile TileDown { get; set; }
 
         public abstract void Remove();
-
-
         public abstract PlacableItem Content { get; set; }
         public abstract char ToChar();
         public static Tile GetTile(char c)
